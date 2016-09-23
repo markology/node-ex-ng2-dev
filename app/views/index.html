@@ -1,0 +1,140 @@
+<html lang="en" class="app">
+
+  <head>
+    <base href="/" 
+    <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+    <script src="ng2-dependencies/es6-shim.min.js"></script>
+    <script src="ng2-dependencies/zone.min.js"></script>
+    <script src="ng2-dependencies/Reflect.min.js"></script>
+    <script src="ng2-dependencies/system.src.min.js"></script>
+    <script src="/moment/moment.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="simple-line-icons.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
+    <script src="dist/app.js"></script>
+    <script>
+    System.config({
+      paths: {
+        '@angular/*': 'node_modules/@angular/*',
+        '*.directive': 'directives/*.directive',
+        'parent/*.directive': 'directives/*.directive',
+        'Components/main2': 'main2',
+        'componentStyles/*': 'public/componentStyles/*.css',
+        'root/app.component': 'app.component',
+        '*.service': 'services/*.service',
+        '*.pipe': 'pipes/*.pipe',
+        'routes': 'app.routes',
+        'general/*.component': 'general/*.component',
+        'collab/*.component': 'collab/*.component',
+        'razu/helpers/*': 'directives/models/*',
+        'ng2music': 'directives/components/ng2music/ng2music.component',
+        'ng2video': 'directives/components/ng2video/ng2video.component',
+
+      },
+
+      bundles: {
+        'dist/app.js': ['main2']
+      },
+
+
+      packages: {
+        'main': {
+          format: 'register',
+          defaultExtension: 'js',
+        },
+        '@angular/core': {
+          main: 'bundles/core.umd.js',
+          defaultExtension: 'js'
+        },
+        '@angular/compiler': {
+          main: 'bundles/compiler.umd.js',
+          defaultExtension: 'js'
+        },
+        '@angular/common': {
+          main: 'bundles/common.umd.js',
+          defaultExtension: 'js'
+        },
+        '@angular/router': {
+          main: 'bundles/router.umd.js',
+          defaultExtension: 'js'
+        },
+        '@angular/http': {
+          main: 'bundles/http.umd.js',
+          defaultExtension: 'js'
+        },
+        '@angular/platform-browser': {
+          main: 'bundles/platform-browser.umd.js',
+          defaultExtension: 'js'
+        },
+        '@angular/platform-browser-dynamic': {
+          main: 'bundles/platform-browser-dynamic.umd.js',
+          defaultExtension: 'js'
+        },
+
+        rxjs: {
+          defaultExtension: 'js'
+        }
+      }
+    });
+    System.import('main').then(function(src) {});
+
+    // Enable pusher logging - don't include this in production
+    </script>
+  </head>
+
+<body>
+  <style>
+  svg {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    display: inline-block;
+    margin-top: 40vh;
+  }
+  
+  #load {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, .85);
+    background: rgba(67, 166, 190, 0.92);
+    background: #F46C6C;
+    z-index: 99999;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 0;
+    color: white;
+  }
+  </style>
+  <my-app>
+    <div id="load">
+      <svg version="1.1" id="L7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+        <path fill="#fff" d="M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3
+                c-8.4-21.3,2-45.4,23.3-53.8L31.6,3.5z">
+          <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="2s" from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+        </path>
+        <path fill="#fff" d="M42.3,39.6c5.7-4.3,13.9-3.1,18.1,2.7c4.3,5.7,3.1,13.9-2.7,18.1l4.1,5.5c8.8-6.5,10.6-19,4.1-27.7
+                c-6.5-8.8-19-10.6-27.7-4.1L42.3,39.6z">
+          <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="-360 50 50" repeatCount="indefinite" />
+        </path>
+        <path fill="#fff" d="M82,35.7C74.1,18,53.4,10.1,35.7,18S10.1,46.6,18,64.3l7.6-3.4c-6-13.5,0-29.3,13.5-35.3s29.3,0,35.3,13.5
+                L82,35.7z">
+          <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="2s" from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+        </path>
+      </svg>
+      <h1>Loading</h1>
+    </div>
+  </my-app>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+
+</html>

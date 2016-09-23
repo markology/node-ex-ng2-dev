@@ -1,0 +1,110 @@
+#ng2music-container{
+    position: absolute;
+    bottom: 0px;
+    z-index: 999999;
+    padding-left: 109px;
+    border-top: 2px solid #f46c6c;
+    background: #f46c6c !important;
+    transition: all 1s ease;
+    background: #333333 !important;
+    margin-bottom: 0px;
+    height: 66px;    
+}
+
+.ng2m-hide{
+    float: left;
+    position: absolute;
+    left: 18px;
+    top: 16px;
+    font-size: 2.6rem;	
+}
+
+.ng2m-seek{
+	width: 100%;
+}
+
+
+input[type=range]..ng2m-progress {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 0px 0;
+}
+input[type=range]..ng2m-progress:focus {
+  outline: none;
+}
+input[type=range]..ng2m-progress::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 34px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #ffffff;
+  border-radius: 0px;
+  border: 0px solid #010101;
+}
+input[type=range]..ng2m-progress::-webkit-slider-thumb {
+  box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+  border: 0px solid #ff1e00;
+  height: 34px;
+  width: 18px;
+  border-radius: 0px;
+  background: rgba(255, 67, 95, 0.93);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: 0px;
+}
+input[type=range]..ng2m-progress:focus::-webkit-slider-runnable-track {
+  background: #fff;
+}
+input[type=range]..ng2m-progress::-moz-range-track {
+  width: 100%;
+  height: 34px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #ffffff;
+  border-radius: 0px;
+  border: 0px solid #010101;
+}
+input[type=range]..ng2m-progress::-moz-range-thumb {
+  box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+  border: 0px solid #ff1e00;
+  height: 34px;
+  width: 18px;
+  border-radius: 0px;
+  background: rgba(255, 67, 95, 0.93);
+  cursor: pointer;
+}
+input[type=range]..ng2m-progress::-ms-track {
+  width: 100%;
+  height: 34px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]..ng2m-progress::-ms-fill-lower {
+  background: #fff;
+  border: 0px solid #010101;
+  border-radius: 0px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]..ng2m-progress::-ms-fill-upper {
+  background: #ffffff;
+  border: 0px solid #010101;
+  border-radius: 0px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]..ng2m-progress::-ms-thumb {
+  box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+  border: 0px solid #ff1e00;
+  width: 18px;
+  border-radius: 0px;
+  background: rgba(255, 67, 95, 0.93);
+  cursor: pointer;
+  height: 34px;
+}
+input[type=range]..ng2m-progress:focus::-ms-fill-lower {
+  background: #ffffff;
+}
+input[type=range]..ng2m-progress:focus::-ms-fill-upper {
+  background: #fff;
+}

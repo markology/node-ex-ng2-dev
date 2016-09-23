@@ -1,0 +1,36 @@
+                       
+
+<div id="ng2m-container" >
+
+  <video #ng2m  ontimeupdate="" id="ng2m-player" preload="metadata" [src]="source"></video>
+  <div class="ng2m-interface">
+    <div class="ng2m-controls">
+
+      <div class="ng2m-play-toggle">
+        <span (click)="ng2m.play()"  *ngIf="!playing"><i class="icon-control-play i-2x"></i></span>
+        <span (click)="ng2m.pause()"  *ngIf="playing"><i class="icon-control-pause i-2x"></i></span>
+      </div>
+        <div class="ng2m-seek">
+          <div class="ng2m-progress"></div>          
+        </div>
+        <div class="ng2m-currentTime">{{currentTime}}</div>
+        <div class="ng2m-duration">{{duration}}</div>
+
+
+        <div class="ng2m-mute-toggle">
+          <span (click)="ng2m.muted = true"  *ngIf="!ng2m.muted" class="ng2music-mute" ><i class="icon-volume-2"></i></span>
+          <span (click)="ng2m.muted = false" *ngIf="ng2m.muted"  class="ng2music-unmute" ><i class="icon-volume-off"></i></span>
+        </div>
+        <div class="ng2m-volume">
+            <input #volume class="ng2m-volume-slider" (change)="ng2m.volume = volume.value / 100" type="range">
+        </div>
+
+        <div>
+          <a (click)="setFull()" class="jp-full-screen" title="full screen"><i class="fa fa-expand"></i></a>
+          <a (click)="setFull()" class="jp-restore-screen" title="restore screen" style="display: none;"><i class="fa fa-compress text-lt"></i></a>
+        </div>
+
+    </div>
+  </div>   
+
+</div>

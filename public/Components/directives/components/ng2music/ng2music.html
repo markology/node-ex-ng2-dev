@@ -1,0 +1,66 @@
+                       
+
+<div id="ng2m-container" >
+  <span class="ng2m-hide"><i (click)="emitHide()" class="icon-arrow-down icon"></i></span>
+  <audio #ng2m  ontimeupdate="" id="ng2m-player" preload="metadata" [src]="tracks[trackIndex]" ></audio>
+  <div class="ng2m-interface">
+    <div class="ng2m-controls">
+      <div class="ng2m-previous">
+        <span *ngIf="!isShuffle" (click)="trackIndex = (trackIndex == 0 ? tracks.length -1 : trackIndex -1)" ><i class="icon-control-rewind i-lg"></i></span>
+        <span *ngIf="isShuffle" (click)="shuffleBackward()"  ><i class="icon-control-rewind i-lg"></i></span>
+      </div>
+      <div class="ng2m-play-toggle">
+        <span (click)="ng2m.play()"  *ngIf="!playing"><i class="icon-control-play i-2x"></i></span>
+        <span (click)="ng2m.pause()"  *ngIf="playing"><i class="icon-control-pause i-2x"></i></span>
+      </div>
+      <div class="ng2m-next">
+        <span *ngIf="!isShuffle" (click)="trackIndex = ((trackIndex + 1) % tracks.length)" ><i class="icon-control-forward i-lg"></i></span>
+        <span *ngIf="isShuffle" (click)="shuffleForward()" ><i class="icon-control-forward i-lg"></i></span>
+      </div>
+      <div class="ng2m-playlist-toggle">
+        <span [ngClass]="{pop: playlist}" (click)="playlist = !playlist" >
+          <i class="icon-list"></i>
+        </span>
+        <ul [ngClass]="{hide:!playlist}" class="ng2m-playlist">
+          <li *ngFor="let song of tracks; let k = index; " (click)="trackIndex = k; detectChange()">
+              <audio #i [src]="song"></audio>
+              <span>{{song.replace(filenameFilter, '')}}</span>
+              <span>{{setDuration(i.duration)}}</span>
+              <p (click)="tracks.splice(k ,1); spliceCB(k)">x</p>
+              <i *ngIf="(trackIndex == k && !playing) || trackIndex != k" (click)="ng2m.play();  detectChange()" class="icon-control-play"></i>              
+              <i *ngIf="trackIndex == k && playing" (click)="ng2m.pause(); detectChange()" class="icon-control-pause"></i>
+          </li>
+        </ul>
+      </div>
+
+        <div class="ng2m-seek">
+          <div class="ng2m-progress"></div>          
+            <span > {{tracks[trackIndex].replace(filenameFilter, '')}}</span>
+        </div>
+
+        <div class="ng2m-currentTime">{{currentTime}}</div>
+        <div class="ng2m-duration">{{duration}}</div>
+
+
+        <div class="ng2m-mute-toggle">
+          <span (click)="ng2m.muted = true"  *ngIf="!ng2m.muted" class="ng2music-mute" ><i class="icon-volume-2"></i></span>
+          <span (click)="ng2m.muted = false" *ngIf="ng2m.muted"  class="ng2music-unmute" ><i class="icon-volume-off"></i></span>
+        </div>
+        <div class="ng2m-volume">
+            <input #volume class="ng2m-volume-slider" (change)="ng2m.volume = volume.value / 100" type="range">
+        </div>
+
+        <div class="ng2m-shuffle-toggle">
+          <span (click)="shuffle(true)" *ngIf="!isShuffle" class="ng2m-shuffle" ><i class="icon-shuffle text-muted"></i></span>
+          <span (click)="shuffle(false)" *ngIf="isShuffle" class="ng2m-shuffle-off" ><i class="icon-shuffle text-lt"></i></span>
+        </div>
+
+      <div class="ng2m-repeat-toggle">
+        <span (click)="ng2m.loop = true" *ngIf="!ng2m.loop" class="ng2m-repeat" ><i class="icon-loop text-muted"></i></span>
+        <span (click)="ng2m.loop = false" *ngIf="ng2m.loop" class="ng2m-repeat-off"><i class="icon-loop text-lt"></i></span>
+      </div> 
+
+    </div>
+  </div>   
+
+</div>
