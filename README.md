@@ -1,4 +1,4 @@
-# node-express-ng2-dev
+# node-ex-ng2-dev
 > Development environment for open source projects in node and angular 2
 
  
