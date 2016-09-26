@@ -1,7 +1,13 @@
 # node-ex-ng2-dev
 > Development environment for open source projects in node and angular 2
 
- 
+## Dependencies
+
+In order to run you must install the following dependencies
+- [SASS](http://sass-lang.com/install)
+- [Node] (https://nodejs.org/en/download/) 
+- Gulp ( npm install gulp -g) 
+
 
 ## Installation
 
